@@ -3,48 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustPlayer - Support & Privacy</title>
+    <meta name="description" content="JustPlayer 支持与隐私政策 - 纯粹的本地音乐播放器">
+    <title>支持与隐私 - JustPlayer</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 40px auto; padding: 0 20px; background-color: #ffffff; }
-        h1 { font-weight: 800; font-size: 28px; margin-bottom: 10px; text-align: center; color: #000; }
-        .tagline { text-align: center; color: #888; font-size: 14px; margin-bottom: 40px; }
-        h2 { font-size: 18px; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; margin-top: 40px; color: #007AFF; }
-        p, li { font-size: 15px; color: #444; }
-        ul { padding-left: 20px; }
-        .contact-btn { display: inline-block; background: #007AFF; color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,122,255,0.2); }
-        .contact-btn:hover { background: #0063D1; }
-        footer { margin-top: 60px; font-size: 12px; color: #ccc; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: #1d1d1f;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            color: #86868b;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #007AFF 0%, #5856D6 100%);
+            border-radius: 2px;
+        }
+
+        .intro {
+            font-size: 17px;
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: #f5f5f7;
+            border-radius: 12px;
+            font-size: 15px;
+            color: #424245;
+            transition: background 0.2s ease;
+        }
+
+        .feature-list li:hover {
+            background: #e8e8ed;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 32px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            justify-content: center;
+        }
+
+        .contact-section h2::before {
+            display: none;
+        }
+
+        .contact-section p {
+            margin-bottom: 24px;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #d2d2d7;
+            color: #86868b;
+            font-size: 13px;
+        }
+
+        .support-items li::before {
+            background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
+            content: '•';
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 16px;
+            }
+
+            .logo {
+                font-size: 36px;
+            }
+
+            .card {
+                padding: 24px;
+                border-radius: 16px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .feature-list li {
+                padding: 14px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>JustPlayer</h1>
-    <p class="tagline">仅仅是播放器 / Just a Player</p>
+    <div class="header">
+        <div class="logo">JustPlayer</div>
+        <p class="tagline">Just a Player / 仅仅是播放器</p>
+    </div>
 
-    <section id="support">
+    <div class="card">
         <h2>App Support / 用户支持</h2>
-        <p>感谢使用 JustPlayer。如果您在使用过程中遇到任何问题，或有功能改进建议，请随时联系我：</p>
-        <ul>
+        <p class="intro">感谢使用 JustPlayer。如果您在使用过程中遇到任何问题，或有功能改进建议，请随时联系我。</p>
+        <ul class="feature-list support-items">
             <li>反馈播放 Bug 或性能问题</li>
             <li>建议希望增加的音频格式支持</li>
             <li>分享关于 UI 交互的想法</li>
+            <li>其他任何问题或建议</li>
         </ul>
-        <a href="mailto:lingojack@qq.com" class="contact-btn">联系开发者 (lingojack@qq.com)</a>
-    </section>
+    </div>
 
-    <section id="privacy">
+    <div class="card">
         <h2>Privacy Policy / 隐私政策</h2>
-        <p>JustPlayer 是一款追求极致纯粹的本地音乐播放器，我们严格保护您的隐私：</p>
-        <ul>
-            <li><strong>零数据收集：</strong> 我们不会收集、上传或存储您的任何个人信息、地理位置或设备识别符。</li>
-            <li><strong>本地运行：</strong> 所有的播放列表和配置数据仅保存在您的手机本地，绝不联网上传。</li>
-            <li><strong>权限说明：</strong> 我们仅申请“媒体库”访问权限以读取和播放音乐文件。</li>
-            <li><strong>无广告追踪：</strong> 应用内不包含任何第三方 SDK、广告插件或用户行为追踪代码。</li>
+        <p class="intro">JustPlayer 是一款追求极致纯粹的本地音乐播放器，我们严格保护您的隐私。</p>
+        <ul class="feature-list">
+            <li>零数据收集：我们不收集、上传或存储您的任何个人信息、地理位置或设备识别符</li>
+            <li>本地运行：所有的播放列表和配置数据仅保存在您的手机本地，绝不联网上传</li>
+            <li>权限说明：我们仅申请"媒体库"访问权限以读取和播放音乐文件</li>
+            <li>无广告追踪：应用内不包含任何第三方 SDK、广告插件或用户行为追踪代码</li>
         </ul>
-    </section>
+    </div>
+
+    <div class="card contact-section">
+        <h2>联系开发者</h2>
+        <p>我们重视每一位用户的反馈与建议</p>
+        <a href="mailto:lingojack@qq.com" class="contact-btn">发送邮件 (lingojack@qq.com)</a>
+    </div>
 
     <footer>
-        &copy; 2026 JustPlayer. All rights reserved.
+        <p>&copy; 2025 JustPlayer. All rights reserved.</p>
     </footer>
 
 </body>
